@@ -21,12 +21,14 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -122,6 +124,7 @@ fun DisplayText(
     text: String,
     modifier: Modifier
 ) {
+    val textColor = LocalContentColor.current
     Box (
         modifier = modifier,
         contentAlignment = Alignment.CenterEnd
@@ -132,6 +135,9 @@ fun DisplayText(
             autoSize = TextAutoSize.StepBased(
                 minFontSize = 16.sp,
                 maxFontSize = 72.sp
+            ),
+            style = TextStyle(
+                color = textColor
             )
         )
     }
